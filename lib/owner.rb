@@ -45,7 +45,15 @@ class Owner
     end
   end
   
-  
+  def feed_fish
+    @pets.collect do |species, instances|
+      if species == :fishes
+        instances.each do |fish|
+          fish.mood = "happy"
+        end
+      end
+    end
+  end
   
   def list_pets
     num_dogs = @pets[:dogs].size
